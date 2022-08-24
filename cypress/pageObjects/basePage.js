@@ -63,6 +63,10 @@ class BasePage {
     static get searchBar() {
       return cy.get(`.mat-form-field-type-mat-input`);
     }
+
+    static get basket() {
+      return cy.get(`[aria-label="Show the shopping cart"]`)
+    }
 }
 
 export default BasePage;

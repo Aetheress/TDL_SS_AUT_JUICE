@@ -2,7 +2,13 @@ import BasePage from "../pageObjects/basePage";
 import LoginPage from "../pageObjects/loginPage";
 import RegisterPage from "../pageObjects/registerPage";
 import SearchResultsPage from "../pageObjects/searchResultsPage";
-import JuiceCard from "../pageObjects/juiceCard"
+import JuiceCard from "../pageObjects/juiceCard";
+import BasketPage from "../pageObjects/basketPage";
+import SelectAddressPage from "../pageObjects/selectAddressPage";
+import DeliveryMethodPage from "../pageObjects/deliveryMethodPage";
+import PaymentOptionsPage from "../pageObjects/paymentOptionsPage";
+import OrderSummaryPage from "../pageObjects/orderSummaryPage";
+import OrderCompletionPage from "../pageObjects/orderCompletionPage";
 
 describe('Juice shop testing', () => {
   context("Login & sign up test set", () => {
@@ -83,6 +89,26 @@ describe('Juice shop testing', () => {
       JuiceCard.submit.click();
       JuiceCard.reviewsDropdown.click();
       JuiceCard.reviews.should("contain.text", review);
+    })
+    it("Scenario 7 - Validate product card amount", () => {
+      SearchResultsPage.cards.should("have.length", 12);
+      SearchResultsPage.itemsAmount.click().get(`#mat-option-4`).click();
+      SearchResultsPage.cards.should("have.length", 24);
+    })
+    it("Scenario 8 - Buy Girlie T-shirt", () => {
+        BasePage.searchButton.click();
+        BasePage.searchBar.type('Girlie{enter}');
+        SearchResultsPage.addToBasket.click();
+        BasePage.basket.click();
+        BasketPage.checkOut.click();
+        SelectAddressPage.addressSelection.click();
+        SelectAddressPage.continue.click();
+        DeliveryMethodPage.standardDelivery.click();
+        DeliveryMethodPage.continue.click();
+        PaymentOptionsPage.card.click();
+        PaymentOptionsPage.continue.click();
+        OrderSummaryPage.checkOut.click();
+        OrderCompletionPage.message.should("have.text", "Thank you for your purchase!");
     })
   })
 })
