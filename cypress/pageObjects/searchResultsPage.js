@@ -10,6 +10,9 @@ class SearchResultsPage extends BasePage {
     static get itemsAmount() {
         return cy.get(`[aria-label="Items per page:"]`);
     }
+    static get itemsAmountOptions() {
+        return cy.get(`span.mat-option-text`);
+    }
     //works if only one item
     static get addToBasket() {
         return cy.get(`[aria-label="Add to Basket"]`);

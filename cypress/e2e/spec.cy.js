@@ -30,7 +30,7 @@ describe('Juice shop testing', () => {
       BasePage.accountName.should("contain.text", "demo");
     });
     it("Scenario 2 - Registration", () => {
-      LoginPage.register.click();
+      LoginPage.register.click({force: true});
       let email = "email_" + Math.floor(Math.random()*10000) + "@ebox.com";
       RegisterPage.email.type(email);
       let password = "password";
@@ -95,20 +95,21 @@ describe('Juice shop testing', () => {
     })
     it("Scenario 7 - Validate product card amount", () => {
       SearchResultsPage.cards.should("have.length", 12);
-      SearchResultsPage.itemsAmount.click().get(`#mat-option-4`).click();
+      SearchResultsPage.itemsAmount.click();
+      SearchResultsPage.itemsAmountOptions.contains("24").click();
       SearchResultsPage.cards.should("have.length", 24);
     })
-    it("Scenario 8 - Buy Girlie T-shirt", () => {
+    it.only("Scenario 8 - Buy Girlie T-shirt", () => {
         BasePage.searchButton.click();
         BasePage.searchBar.type('Girlie{enter}');
         SearchResultsPage.addToBasket.click();
         BasePage.basket.click();
         BasketPage.checkOut.click();
-        SelectAddressPage.addressSelection.click();
+        SelectAddressPage.addresses.contains("United Fakedom").click();
         SelectAddressPage.continue.click();
-        DeliveryMethodPage.standardDelivery.click();
+        DeliveryMethodPage.deliveryMethods.contains("Standard Delivery").click();
         DeliveryMethodPage.continue.click();
-        PaymentOptionsPage.card.click();
+        PaymentOptionsPage.paymentOptions.contains("5678").parent().get("mat-cell:nth-child(1)").click();
         PaymentOptionsPage.continue.click();
         OrderSummaryPage.checkOut.click();
         OrderCompletionPage.message.should("have.text", "Thank you for your purchase!");

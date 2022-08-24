@@ -1,8 +1,8 @@
 import BasePage from "./basePage";
 
 class DeliveryMethodPage extends BasePage {
-    static get standardDelivery() {
-        return cy.get(`#mat-radio-43`);
+    static get deliveryMethods() {
+        return cy.get(`mat-row.mat-row`);
     }
     static get continue() {
         return cy.get(`[aria-label="Proceed to delivery method selection"]`);
