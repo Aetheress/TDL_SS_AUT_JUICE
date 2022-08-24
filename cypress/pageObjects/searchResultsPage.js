@@ -4,9 +4,11 @@ class SearchResultsPage extends BasePage {
     static get lemonJuice() {
         return cy.get(`[alt^="Lemon Juice"]`);
     }
-    static get card() {
-        return cy.get(`app-product-details`);
+
+    static juice(fruit) {
+        return cy.get(`[alt^="${fruit} Juice"]`)
     }
+
 }
 
 export default SearchResultsPage;
