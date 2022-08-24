@@ -4,8 +4,8 @@ Set-up steps. Likely the final task won't have the exact same steps, but regardl
 
 
 
-**Stage 1: Creating the repository
-**
+**Stage 1: Creating the repository**
+
 1. Log into your GitHub account
 2. Open this link: https://github.com/new
 3. Fill in the repository name field with something, maybe the teacher will give us a name himself
