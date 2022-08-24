@@ -11,6 +11,7 @@ import OrderSummaryPage from "../pageObjects/orderSummaryPage";
 import OrderCompletionPage from "../pageObjects/orderCompletionPage";
 import SavedAddressesPage from "../pageObjects/savedAddressesPage";
 import CreateAddressPage from "../pageObjects/createAddressPage";
+import SavedPaymentMethodsPage from "../pageObjects/savedPaymentMethodsPage"
 
 describe('Juice shop testing', () => {
   context("Login & sign up test set", () => {
@@ -112,7 +113,7 @@ describe('Juice shop testing', () => {
         OrderSummaryPage.checkOut.click();
         OrderCompletionPage.message.should("have.text", "Thank you for your purchase!");
     })
-    it.only("Scenario 9 - Add Address", () => {
+    it("Scenario 9 - Add Address", () => {
       BasePage.account.click();
       BasePage.ordersAndPayment.click();
       BasePage.savedAddresses.click();
@@ -126,7 +127,19 @@ describe('Juice shop testing', () => {
       CreateAddressPage.submit.click();
       SavedAddressesPage.addresses.should("contain.text", "Ulvis Blathens");
       SavedAddressesPage.addresses.should("contain.text", "Lacplesa 19482374");
-
+    })
+    it("Scenario 10 - Add payment option", () => {
+      BasePage.account.click();
+      BasePage.ordersAndPayment.click();
+      BasePage.paymentOptions.click();
+      SavedPaymentMethodsPage.addCard.click();
+      SavedPaymentMethodsPage.name.type("Card #5");
+      SavedPaymentMethodsPage.cardNumber.type("1234567890123456");
+      SavedPaymentMethodsPage.expiryMonth.select("7");
+      SavedPaymentMethodsPage.expiryYear.select("2090");
+      SavedPaymentMethodsPage.submit.click();
+      SavedPaymentMethodsPage.methods.should("contain.text", "3456");
+      SavedPaymentMethodsPage.methods.should("contain.text", "Card #5");
     })
   })
 })

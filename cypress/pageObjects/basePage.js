@@ -75,6 +75,10 @@ class BasePage {
     static get savedAddresses() {
       return cy.get(`[aria-label="Go to saved address page"]`)
     }
+
+    static get paymentOptions() {
+      return cy.get(`[aria-label="Go to saved payment methods page"]`);
+    }
 }
 
 export default BasePage;
