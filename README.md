@@ -4,8 +4,8 @@ Set-up steps. Likely the final task won't have the exact same steps, but regardl
 
 
 
-Stage 1: Creating the repository
-
+**Stage 1: Creating the repository
+**
 1. Log into your GitHub account
 2. Open this link: https://github.com/new
 3. Fill in the repository name field with something, maybe the teacher will give us a name himself
@@ -15,7 +15,7 @@ Stage 1: Creating the repository
 
 
 
-Stage 2: Setting up the workspace
+**Stage 2: Setting up the workspace**
 
 7. Open the terminal (Command + Space, type in "Terminal"; or you can use the internal terminal in VS Code as well if you prefer)
 8. Navigate to the Desktop folder (likely just one "cd Desktop" command will be all you need) (I suspect the teacher will want the folder to be on the Desktop tomorrow as well)
@@ -24,7 +24,7 @@ Stage 2: Setting up the workspace
 
 
 
-Stage 3: Cloning the repository
+**Stage 3: Cloning the repository**
 
 11. Go to the repository you created in Stage 1 and press "Code"
 
@@ -39,7 +39,7 @@ Stage 3: Cloning the repository
 
 
 
-Stage 4: Setting up a Cypress project
+**Stage 4: Setting up a Cypress project**
 
 15. Write "npm init" and then keep pressing ENTER repeatedly until you've gone through everything (a good 15 ENTER presses will be enough probably).
 16. Write "npm i cypress --save-dev" and wait for the installation to finish.
@@ -48,7 +48,7 @@ Stage 4: Setting up a Cypress project
 
 
 
-Stage 5: Preparing configuration and stuff to start working
+**Stage 5: Preparing configuration and stuff to start working**
 
 19. Find the "cypress.config.js" file in your project and add a baseUrl thing like in here (https://github.com/Aetheress/TDL_SS_AUT_JUICE/blob/main/cypress.config.js). You can also just copy-paste and then replace the URL in the quotation marks with the actual site we are testing (e.g., "http://demoqa.com", etc.).
 20. Create a "pageObjects" folder under "cypress".
