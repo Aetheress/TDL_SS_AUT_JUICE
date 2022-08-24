@@ -55,6 +55,14 @@ class BasePage {
     static get accountName() {
       return cy.get(`button[aria-label="Go to user profile"]`);
     }
+
+    static get searchButton() {
+      return cy.get(`.mat-search_icons>mat-icon:nth-child(2)`);
+    }
+
+    static get searchBar() {
+      return cy.get(`.mat-form-field-type-mat-input`);
+    }
 }
 
 export default BasePage;

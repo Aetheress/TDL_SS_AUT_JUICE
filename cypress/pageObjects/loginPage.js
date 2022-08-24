@@ -10,6 +10,9 @@ class LoginPage extends BasePage {
     static get login() {
         return cy.get(`button#loginButton`);
     }
+    static get register() {
+        return cy.get(`[href="#/register"]`);
+    }
 }
 
 export default LoginPage;
