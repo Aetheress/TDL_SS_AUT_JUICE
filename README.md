@@ -113,3 +113,8 @@ describe('name', () => {
 ```
   
 24. Everything is basically set up and you can start doing the actual task. Don't forget to finish each page object you make with an "export default ..." statement and then to put an "import ... from "..."" statement for that class in the test scenario (spec.cy.js) file.
+
+
+Stage 6: Pushing to GitHub after you're done
+
+25. I sure as hell hope the teacher can assist you on this. Surely he will, I mean the task is already done it can hardly be considered intervening. I can't really explain this part well. Someone else can try if they'd like.
