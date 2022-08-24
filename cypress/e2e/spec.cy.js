@@ -99,7 +99,7 @@ describe('Juice shop testing', () => {
       SearchResultsPage.itemsAmountOptions.contains("24").click();
       SearchResultsPage.cards.should("have.length", 24);
     })
-    it.only("Scenario 8 - Buy Girlie T-shirt", () => {
+    it("Scenario 8 - Buy Girlie T-shirt", () => {
         BasePage.searchButton.click();
         BasePage.searchBar.type('Girlie{enter}');
         SearchResultsPage.addToBasket.click();
