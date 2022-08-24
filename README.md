@@ -93,9 +93,9 @@ class BasePage {
             expect(`${loc.pathname}${loc.search}`).to.eq(options.expectedUrl)
           );
      }
-    }
-    export default BasePage;
- ```
+}
+export default BasePage;
+```
  
 23. Open the "spec.cy.js" file in cypress/e2e. This is your test scenario/cases file. You can consult (https://github.com/Aetheress/TDL_SS_AUT_JUICE/blob/main/cypress/e2e/spec.cy.js) for how it looks like. But this should be your starting point, you can copy-paste:
 
@@ -108,8 +108,8 @@ describe('name', () => {
     it("name", () => {
     
     });
-   });
   });
+});
 ```
   
 24. Everything is basically set up and you can start doing the actual task.
