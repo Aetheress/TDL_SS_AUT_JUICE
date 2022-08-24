@@ -55,6 +55,7 @@ Set-up steps. Likely the final task won't have the exact same steps, but regardl
 21. Create a new file in the "pageObjects" folder called "basePage.js" or "base.js" or "base.page.js" just whatever you like really. This is the folder where you will be putting all the pages with the static get functions in.
 22. Just copy-paste this into the basePage.js file (base pages in our level don't really change):
 
+```
 class BasePage {
     static get url() {
         return "/";
@@ -94,9 +95,11 @@ class BasePage {
      }
     }
     export default BasePage;
-    
+ ```
+ 
 23. Open the "spec.cy.js" file in cypress/e2e. This is your test scenario/cases file. You can consult (https://github.com/Aetheress/TDL_SS_AUT_JUICE/blob/main/cypress/e2e/spec.cy.js) for how it looks like. But this should be your starting point, you can copy-paste:
 
+```
 describe('name', () => {
   context("name", () => {
     beforeEach(()=> {
@@ -107,5 +110,6 @@ describe('name', () => {
     });
    });
   });
+```
   
 24. Everything is basically set up and you can start doing the actual task.
