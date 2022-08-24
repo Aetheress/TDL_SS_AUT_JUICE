@@ -112,4 +112,4 @@ describe('name', () => {
 });
 ```
   
-24. Everything is basically set up and you can start doing the actual task.
+24. Everything is basically set up and you can start doing the actual task. Don't forget to finish each page object you make with an "export default ..." statement and then to put an "import ... from "..."" statement for that class in the test scenario (spec.cy.js) file.
