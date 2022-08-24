@@ -1,6 +1,8 @@
 # TDL_SS_AUT_JUICE
 
-Set-up seps. Likely the final task won't have the exact same steps, but regardless these are the steps that were taken to setup THIS project in particular. There will likely be much overlap anyway.
+Set-up steps. Likely the final task won't have the exact same steps, but regardless these are the steps that were taken to setup THIS project in particular. There will likely be much overlap anyway.
+
+
 
 Stage 1: Creating the repository
 
@@ -11,12 +13,16 @@ Stage 1: Creating the repository
 5. Under the "Add .gitignore" section press on the select element that says ".gitignore template: None", write "Node" and select the only option offered to you
 6. Press "Create Repository"
 
+
+
 Stage 2: Setting up the workspace
 
 7. Open the terminal (Command + Space, type in "Terminal"; or you can use the internal terminal in VS Code as well if you prefer)
 8. Navigate to the Desktop folder (likely just one "cd Desktop" command will be all you need) (I suspect the teacher will want the folder to be on the Desktop tomorrow as well)
 9. Create your work folder, this is the place you'll be working in - mkdir XXX (replace XXX with whatever name you choose or we are told to use)
 10. Navigate to the folder you just created - cd XXX
+
+
 
 Stage 3: Cloning the repository
 
@@ -31,12 +37,16 @@ Stage 3: Cloning the repository
 13. Return to the terminal and write "git clone ???" (replace ??? with the link to your repository)
 14. Navigate to the folder that contains the repository we just cloned - cd ??? (replace ??? with the name of the folder, you can just use the TAB key after writing "cd ".
 
+
+
 Stage 4: Setting up a Cypress project
 
 15. Write "npm init" and then keep pressing ENTER repeatedly until you've gone through everything (a good 15 ENTER presses will be enough probably).
 16. Write "npm i cypress --save-dev" and wait for the installation to finish.
 17. Write "npx cypress open" and wait for Cypress to open.
 18. This part should be familiar to you all - press E2E Testing, scroll down, press "Continue", select a browser, press "Start E2E testing in ...", select "Create new empty spec", click "Create Spec", click "Okay, run the spec".
+
+
 
 Stage 5: Preparing configuration and stuff to start working
 
