@@ -67,6 +67,14 @@ class BasePage {
     static get basket() {
       return cy.get(`[aria-label="Show the shopping cart"]`)
     }
+
+    static get ordersAndPayment() {
+      return cy.get(`button[aria-label="Show Orders and Payment Menu"]`);
+    }
+    
+    static get savedAddresses() {
+      return cy.get(`[aria-label="Go to saved address page"]`)
+    }
 }
 
 export default BasePage;

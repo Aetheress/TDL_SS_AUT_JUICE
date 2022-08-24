@@ -9,6 +9,8 @@ import DeliveryMethodPage from "../pageObjects/deliveryMethodPage";
 import PaymentOptionsPage from "../pageObjects/paymentOptionsPage";
 import OrderSummaryPage from "../pageObjects/orderSummaryPage";
 import OrderCompletionPage from "../pageObjects/orderCompletionPage";
+import SavedAddressesPage from "../pageObjects/savedAddressesPage";
+import CreateAddressPage from "../pageObjects/createAddressPage";
 
 describe('Juice shop testing', () => {
   context("Login & sign up test set", () => {
@@ -33,8 +35,8 @@ describe('Juice shop testing', () => {
       let password = "password";
       RegisterPage.password.type(password);
       RegisterPage.repeatPassword.type(password);
-      RegisterPage.securityQuestion.click().get(`#mat-option-9`).click();
-      RegisterPage.securityQuestion.should("have.text", "Name of your favorite pet?");
+      RegisterPage.securityQuestion.click();
+      RegisterPage.securityQuestionOptions.contains("Name of your favorite pet?").click();
       RegisterPage.securityAnswer.type("Cipars");
       RegisterPage.register.click();
       LoginPage.email.type(email);
@@ -109,6 +111,22 @@ describe('Juice shop testing', () => {
         PaymentOptionsPage.continue.click();
         OrderSummaryPage.checkOut.click();
         OrderCompletionPage.message.should("have.text", "Thank you for your purchase!");
+    })
+    it.only("Scenario 9 - Add Address", () => {
+      BasePage.account.click();
+      BasePage.ordersAndPayment.click();
+      BasePage.savedAddresses.click();
+      SavedAddressesPage.addAddress.click();
+      CreateAddressPage.country.type("Latvia");
+      CreateAddressPage.name.type("Ulvis Blathens");
+      CreateAddressPage.mobileNumber.type("12345678");
+      CreateAddressPage.zip.type("111");
+      CreateAddressPage.address.type("Lacplesa 19482374");
+      CreateAddressPage.city.type("Riga");
+      CreateAddressPage.submit.click();
+      SavedAddressesPage.addresses.should("contain.text", "Ulvis Blathens");
+      SavedAddressesPage.addresses.should("contain.text", "Lacplesa 19482374");
+
     })
   })
 })

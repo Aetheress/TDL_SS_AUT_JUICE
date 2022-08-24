@@ -13,8 +13,8 @@ class RegisterPage extends BasePage {
     static get securityQuestion() {
         return cy.get(`mat-select[role="combobox"]`);
     }
-    static get favoritePet() {
-        return cy.get(`#mat-option-9`);
+    static get securityQuestionOptions() {
+        return cy.get(`.mat-option-text`)
     }
     static get securityAnswer() {
         return cy.get(`#securityAnswerControl`);
